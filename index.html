@@ -5,7 +5,7 @@
 		<script type="text/javascript" >
 			function getWeather(cityName) {
 				$(".weather").empty();
-				$.get("http://localhost:8080/weather?=" + cityName).done(function (data) {
+				$.get("http://localhost:8080/weather" + cityName).done(function (data) {
 					$( ".weather" ).append(
 					"<span>Zachmurzenie: " + data.clouds + "%</span> <br />" +
 					"<span>Temperatura: " + data.temp + "&deg;C</span> <br />" + 
