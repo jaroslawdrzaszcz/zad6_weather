@@ -1,6 +1,6 @@
 package domain;
 
-public class WeatheModel {
+public class WeatherModel {
 	private MainModel main;
 	private Wind wind;
 	private Clouds clouds;

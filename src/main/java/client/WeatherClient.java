@@ -4,11 +4,11 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import domain.WeatheModel;
+import domain.WeatherModel;
 import domain.WeatherResponse;
 
 public class WeatherClient {
-	public static final String URL = "http://api.openweathermap.org/data/2.5/weather?q=%s&APPID=26f026d26f85477f9940fec6dd0b75ff";
+	public static final String URL = "http://api.openweathermap.org/data/2.5/weather?q=%s&appid=9fbc19c720911db08b7781156aebcbd8";
 	
 	public WeatherResponse getWeatherForCity(String city) {
 		Response response = ClientBuilder
@@ -18,7 +18,7 @@ public class WeatherClient {
 				.get();
 		
 		if(response.getStatus() == 200) {
-			WeatheModel apiResponse = response.readEntity(WeatheModel.class);
+			WeatherModel apiResponse = response.readEntity(WeatherModel.class);
 			return new WeatherResponse(apiResponse.getClouds().getAll(), 
 					apiResponse.getMain().getTemp(), apiResponse.getMain().getPressure(), apiResponse.getWind().getSpeed());
 		}
